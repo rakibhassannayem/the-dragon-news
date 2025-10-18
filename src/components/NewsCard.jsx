@@ -38,10 +38,16 @@ const NewsCard = ({ news }) => {
     const full = Math.floor(value);
     const half = value - full >= 0.5;
     for (let i = 0; i < full; i++)
-      stars.push(<FaStar size={24} key={"f" + i} className="inline text-yellow-400" />);
+      stars.push(
+        <FaStar size={24} key={"f" + i} className="inline text-yellow-400" />
+      );
     if (half)
       stars.push(
-        <FaStarHalfAlt size={24} key="half" className="inline text-yellow-400" />
+        <FaStarHalfAlt
+          size={24}
+          key="half"
+          className="inline text-yellow-400"
+        />
       );
     const rest = 5 - full - (half ? 1 : 0);
     for (let i = 0; i < rest; i++)
@@ -53,14 +59,14 @@ const NewsCard = ({ news }) => {
 
   // Excerpt
   const excerpt =
-    details && details.length > 220
+    details && details.length > 200
       ? `${details.slice(0, 220).trim()}...`
       : details;
 
   return (
     <article className="card bg-base-100 shadow-md border border-base-200 overflow-hidden md:flex md:items-start mt-4">
       {/* Author row */}
-      <div className="flex items-center justify-between w-full bg-base-300 p-2">
+      <div className="flex items-center justify-between w-full bg-base-200 p-2">
         <div className="flex items-center gap-3">
           <div className="avatar">
             <div className="w-16 rounded-full">
