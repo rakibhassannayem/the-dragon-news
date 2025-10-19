@@ -10,14 +10,14 @@ import Loading from "../pages/Loading";
 const HomeLayout = () => {
   const { state } = useNavigation();
   const data = useLoaderData();
-  const titles = data.map((singleData) => singleData.title);
+  const breakingNewsTitles = data.filter((bn) => bn.category_id == 2).map((singleData) => singleData.title);
 
   return (
     <div>
       <header>
         <Header />
         <section className="w-11/12 mx-auto mb-3">
-          <LatestNews titles={titles} />
+          <LatestNews breakingNewsTitles={breakingNewsTitles} />
         </section>
         <nav className="w-11/12 mx-auto">
           <Navbar />
