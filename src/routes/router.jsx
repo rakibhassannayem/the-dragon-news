@@ -25,6 +25,8 @@ const router = createBrowserRouter([
         hydrateFallbackElement: <Loading></Loading>,
       },
     ],
+    loader: () => fetch("/news.json"),
+    hydrateFallbackElement: <Loading></Loading>,
   },
   {
     path: "/auth",
