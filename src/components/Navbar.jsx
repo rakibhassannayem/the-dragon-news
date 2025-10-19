@@ -18,8 +18,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center">
-      <div>{user && user.email}</div>
+    <div className="flex flex-wrap justify-center gap-3 md:justify-between items-center">
+      <div className="text-secondary font-semibold">{user && user.displayName}</div>
       <div className="nav space-x-5 text-accent">
         <NavLink to={"/"}>Home</NavLink>
         <NavLink to={"/about"}>About</NavLink>
