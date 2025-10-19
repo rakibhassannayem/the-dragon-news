@@ -12,6 +12,7 @@ const NewsCard = ({ news }) => {
   if (!news) return null;
 
   const {
+    id,
     title,
     author = {},
     thumbnail_url,
@@ -103,7 +104,7 @@ const NewsCard = ({ news }) => {
         {/* Excerpt */}
         <p className="text-sm text-base-content/80 mt-2 leading-relaxed">
           {excerpt} {/* Replace Link with <a> or button if you prefer */}
-          <Link to="#" className="text-primary font-semibold hover:underline">
+          <Link to={`/news-details/${id}`} className="text-primary font-semibold hover:underline">
             Read More
           </Link>
         </p>
